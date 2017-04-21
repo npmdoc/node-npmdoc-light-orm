@@ -1,0 +1,1334 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/knyga/light-orm"
+
+    >light-orm (v0.1.4)</a>
+</h1>
+<h4>Super simple ORM node.js wrapper for relational databases. It does not depends on any specific driver, so you can connect to mysql, ms server and so on... Try it!</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.light-orm">module light-orm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection">
+            function <span class="apidocSignatureSpan">light-orm.</span>Collection
+            <span class="apidocSignatureSpan">(options, extensions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model">
+            function <span class="apidocSignatureSpan">light-orm.</span>Model
+            <span class="apidocSignatureSpan">(options, attributes, extensions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">light-orm.</span>Collection.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">light-orm.</span>Model.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.light-orm.Collection">module light-orm.Collection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.Collection">
+            function <span class="apidocSignatureSpan">light-orm.</span>Collection
+            <span class="apidocSignatureSpan">(options, extensions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.light-orm.Collection.prototype">module light-orm.Collection.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.createModel">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>createModel
+            <span class="apidocSignatureSpan">(options, add)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.find">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>find
+            <span class="apidocSignatureSpan">(search, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.findAll">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>findAll
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.findOne">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>findOne
+            <span class="apidocSignatureSpan">(search, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.getModel">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>getModel
+            <span class="apidocSignatureSpan">(at)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.getModels">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>getModels
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.toJSON">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Collection.prototype.toString">
+            function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.light-orm.Model">module light-orm.Model</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.Model">
+            function <span class="apidocSignatureSpan">light-orm.</span>Model
+            <span class="apidocSignatureSpan">(options, attributes, extensions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.light-orm.Model.prototype">module light-orm.Model.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.clear">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>clear
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.create">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>create
+            <span class="apidocSignatureSpan">(callback, isGetModel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.get">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>get
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.getAll">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>getAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.has">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>has
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.remove">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>remove
+            <span class="apidocSignatureSpan">(input, callback, isGetModel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.set">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>set
+            <span class="apidocSignatureSpan">(arg1, arg2, isNew)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.toJSON">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.toString">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.light-orm.Model.prototype.update">
+            function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>update
+            <span class="apidocSignatureSpan">(input, callback, isGetModel)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.light-orm" id="apidoc.module.light-orm">module light-orm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection" id="apidoc.element.light-orm.Collection">
+        function <span class="apidocSignatureSpan">light-orm.</span>Collection
+        <span class="apidocSignatureSpan">(options, extensions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collection(options, extensions) {
+    this.models = [];
+    this.isAddModel = true;
+    if (&#x22;string&#x22; === typeof options) {
+        this.tableName = options;
+
+        if (&#x22;undefined&#x22; !== typeof extensions) {
+            for (var name in extensions) {
+                this[name] = extensions[name];
+            }
+        }
+    }
+
+    if (&#x22;object&#x22; === typeof options) {
+        if (Object.prototype.toString.call(options) === &#x27;[object Array]&#x27;) {
+            if (options.length &#x3e; 0 &#x26;&#x26; options[0] instanceof Light.Model) {
+                this.models = options;
+            } else {
+                for (var i = 0; i &#x3c; options.length; i++) {
+                    this.createModel(options[i]);
+                }
+            }
+        } else {
+            for (var name in options) {
+                this[name] = options[name];
+            }
+        }
+    }
+
+    this.sqlHelper = SQLHelper.getEntity();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+lightOrm.driver = mysql.createConnection(require(&#x27;./connection.json&#x27;));
+lightOrm.driver.connect();
+```
+
+Create collection for table name `author`:
+```javascript
+var AuthorCollection = new lightOrm.<span class="apidocCodeKeywordSpan">Collection</span>(&#x27;author&#x27;);
+```
+
+Find one model:
+```javascript
+AuthorCollection.findOne({
+	id: 1
+}, function(err, model) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model" id="apidoc.element.light-orm.Model">
+        function <span class="apidocSignatureSpan">light-orm.</span>Model
+        <span class="apidocSignatureSpan">(options, attributes, extensions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Model(options, attributes, extensions) {
+    //        public static CREATE = &#x27;create&#x27;;
+    //        public static UPDATE = &#x27;update&#x27;;
+    //        public static REMOVE = &#x27;remove&#x27;;
+    this.pkAttr = &#x27;id&#x27;;
+    this.data = {};
+    this.dataNew = {};
+    if (&#x22;undefined&#x22; !== typeof options &#x26;&#x26; options.hasOwnProperty(&#x27;connector&#x27;)) {
+        for (var name in options) {
+            this[name] = options[name];
+        }
+    } else {
+        this.tableName = options;
+
+        if (&#x22;undefined&#x22; !== typeof attributes) {
+            this.data = attributes;
+        }
+
+        if (&#x22;undefined&#x22; !== typeof extensions) {
+            for (var name in extensions) {
+                this[name] = extensions[name];
+            }
+        }
+    }
+
+    this.sqlHelper = SQLHelper.getEntity();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        data = options;
+    }
+
+    if (&#x22;undefined&#x22; === typeof add) {
+        add = this.isAddModel;
+    }
+
+    model = new Light.<span class="apidocCodeKeywordSpan">Model</span>(this.tableName, data, this.modelExtension);
+
+    if (add) {
+        this.models.push(model);
+    }
+
+    return model;
+};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.light-orm.Collection" id="apidoc.module.light-orm.Collection">module light-orm.Collection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.Collection" id="apidoc.element.light-orm.Collection.Collection">
+        function <span class="apidocSignatureSpan">light-orm.</span>Collection
+        <span class="apidocSignatureSpan">(options, extensions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collection(options, extensions) {
+    this.models = [];
+    this.isAddModel = true;
+    if (&#x22;string&#x22; === typeof options) {
+        this.tableName = options;
+
+        if (&#x22;undefined&#x22; !== typeof extensions) {
+            for (var name in extensions) {
+                this[name] = extensions[name];
+            }
+        }
+    }
+
+    if (&#x22;object&#x22; === typeof options) {
+        if (Object.prototype.toString.call(options) === &#x27;[object Array]&#x27;) {
+            if (options.length &#x3e; 0 &#x26;&#x26; options[0] instanceof Light.Model) {
+                this.models = options;
+            } else {
+                for (var i = 0; i &#x3c; options.length; i++) {
+                    this.createModel(options[i]);
+                }
+            }
+        } else {
+            for (var name in options) {
+                this[name] = options[name];
+            }
+        }
+    }
+
+    this.sqlHelper = SQLHelper.getEntity();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+lightOrm.driver = mysql.createConnection(require(&#x27;./connection.json&#x27;));
+lightOrm.driver.connect();
+```
+
+Create collection for table name `author`:
+```javascript
+var AuthorCollection = new lightOrm.<span class="apidocCodeKeywordSpan">Collection</span>(&#x27;author&#x27;);
+```
+
+Find one model:
+```javascript
+AuthorCollection.findOne({
+	id: 1
+}, function(err, model) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.light-orm.Collection.prototype" id="apidoc.module.light-orm.Collection.prototype">module light-orm.Collection.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.createModel" id="apidoc.element.light-orm.Collection.prototype.createModel">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>createModel
+        <span class="apidocSignatureSpan">(options, add)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createModel = function (options, add) {
+    var model, data;
+
+    if (&#x22;boolean&#x22; === typeof options) {
+        add = options;
+    } else {
+        data = options;
+    }
+
+    if (&#x22;undefined&#x22; === typeof add) {
+        add = this.isAddModel;
+    }
+
+    model = new Light.Model(this.tableName, data, this.modelExtension);
+
+    if (add) {
+        this.models.push(model);
+    }
+
+    return model;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+            if (&#x22;object&#x22; === typeof options) {
+if (Object.prototype.toString.call(options) === &#x27;[object Array]&#x27;) {
+    if (options.length &#x3e; 0 &#x26;&#x26; options[0] instanceof Light.Model) {
+        this.models = options;
+    } else {
+        for (var i = 0; i &#x3c; options.length; i++) {
+            this.<span class="apidocCodeKeywordSpan">createModel</span>(options[i]);
+        }
+    }
+} else {
+    for (var name in options) {
+        this[name] = options[name];
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.find" id="apidoc.element.light-orm.Collection.prototype.find">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>find
+        <span class="apidocSignatureSpan">(search, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (search, callback) {
+    var _this = this;
+    var query = &#x22;&#x22;;
+
+    if (&#x22;string&#x22; === typeof search) {
+        query = search;
+    } else {
+        query = this.sqlHelper.buildSelect(this.tableName, search);
+    }
+
+    Light.driver.query(query, function (err, rows, fields) {
+        if (err) {
+            if (&#x22;function&#x22; === typeof callback) {
+                callback(err);
+            }
+        } else {
+            var models = [];
+
+            for (var i = 0; i &#x3c; rows.length; i++) {
+                var model = new Light.Model(_this.tableName, rows[i], _this.modelExtension);
+                models.push(model);
+            }
+
+            if (&#x22;function&#x22; === typeof callback) {
+                callback(null, models);
+            }
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	console.log(model.getAll());
+	//{ id: 1, name: &#x27;James Bond&#x27;, description: &#x27;Agent 007&#x27; }
+});
+```
+
+Find models:
+```javascript
+CarCollection.<span class="apidocCodeKeywordSpan">find</span>({
+	category_id: 5
+}, function(err, models) {});
+```
+
+Find models by sql:
+```javascript
+CarCollection.find({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.findAll" id="apidoc.element.light-orm.Collection.prototype.findAll">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>findAll
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findAll = function (callback) {
+    this.find(undefined, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.findOne" id="apidoc.element.light-orm.Collection.prototype.findOne">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>findOne
+        <span class="apidocSignatureSpan">(search, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findOne = function (search, callback) {
+    this.find(search, function (lerr, lmodels) {
+        var model;
+
+        if (lmodels.length &#x3e; 0) {
+            model = lmodels[0];
+        }
+
+        if (&#x22;function&#x22; === typeof callback) {
+            callback(lerr, model);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Create collection for table name `author`:
+```javascript
+var AuthorCollection = new lightOrm.Collection(&#x27;author&#x27;);
+```
+
+Find one model:
+```javascript
+AuthorCollection.<span class="apidocCodeKeywordSpan">findOne</span>({
+	id: 1
+}, function(err, model) {
+	console.log(model.getAll());
+	//{ id: 1, name: &#x27;James Bond&#x27;, description: &#x27;Agent 007&#x27; }
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.getModel" id="apidoc.element.light-orm.Collection.prototype.getModel">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>getModel
+        <span class="apidocSignatureSpan">(at)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getModel = function (at) {
+    if (this.models.length &#x3c;= at) {
+        //throw new Error(&#x22;No model at &#x22; + at);
+        return null;
+    }
+
+    return this.models[at];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.getModels" id="apidoc.element.light-orm.Collection.prototype.getModels">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>getModels
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getModels = function () {
+    return this.models;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.toJSON" id="apidoc.element.light-orm.Collection.prototype.toJSON">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    var data = [];
+    for (var i = 0, length = this.models.length; i &#x3c; length; i++) {
+        data.push(this.models[i].toJSON());
+    }
+
+    return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    /**
+    * Create array of attributes of saved models
+    * @returns {array}
+    */
+    Collection.prototype.toJSON = function () {
+        var data = [];
+        for (var i = 0, length = this.models.length; i &#x3c; length; i++) {
+            data.push(this.models[i].<span class="apidocCodeKeywordSpan">toJSON</span>());
+        }
+
+        return data;
+    };
+    return Collection;
+})();
+Light.Collection = Collection;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Collection.prototype.toString" id="apidoc.element.light-orm.Collection.prototype.toString">
+        function <span class="apidocSignatureSpan">light-orm.Collection.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return &#x22;[LightOrm Collection &#x3c;&#x22; + this.tableName + &#x22;&#x3e;]&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return (m[1] == &#x27;-&#x27; ? -1 : 1) * (parseInt(m[2], 10) + ((m[3] ? parseInt(m[3], 10) : 0) / 60)) * 60;
+    }
+
+    return 0;
+};
+
+SqlString.prototype.zeroPad = function (vnumber, vlength) {
+    var snumber = vnumber.<span class="apidocCodeKeywordSpan">toString</span>();
+
+    while (snumber.length &#x3c; vlength) {
+        snumber = &#x27;0&#x27; + snumber;
+    }
+
+    return snumber;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.light-orm.Model" id="apidoc.module.light-orm.Model">module light-orm.Model</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.Model" id="apidoc.element.light-orm.Model.Model">
+        function <span class="apidocSignatureSpan">light-orm.</span>Model
+        <span class="apidocSignatureSpan">(options, attributes, extensions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Model(options, attributes, extensions) {
+    //        public static CREATE = &#x27;create&#x27;;
+    //        public static UPDATE = &#x27;update&#x27;;
+    //        public static REMOVE = &#x27;remove&#x27;;
+    this.pkAttr = &#x27;id&#x27;;
+    this.data = {};
+    this.dataNew = {};
+    if (&#x22;undefined&#x22; !== typeof options &#x26;&#x26; options.hasOwnProperty(&#x27;connector&#x27;)) {
+        for (var name in options) {
+            this[name] = options[name];
+        }
+    } else {
+        this.tableName = options;
+
+        if (&#x22;undefined&#x22; !== typeof attributes) {
+            this.data = attributes;
+        }
+
+        if (&#x22;undefined&#x22; !== typeof extensions) {
+            for (var name in extensions) {
+                this[name] = extensions[name];
+            }
+        }
+    }
+
+    this.sqlHelper = SQLHelper.getEntity();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        data = options;
+    }
+
+    if (&#x22;undefined&#x22; === typeof add) {
+        add = this.isAddModel;
+    }
+
+    model = new Light.<span class="apidocCodeKeywordSpan">Model</span>(this.tableName, data, this.modelExtension);
+
+    if (add) {
+        this.models.push(model);
+    }
+
+    return model;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.light-orm.Model.prototype" id="apidoc.module.light-orm.Model.prototype">module light-orm.Model.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.clear" id="apidoc.element.light-orm.Model.prototype.clear">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>clear
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (name) {
+    if (&#x22;undefined&#x22; === typeof name) {
+        this.dataNew = {};
+        this.data = {};
+    } else {
+        if (this.dataNew.hasOwnProperty(name)) {
+            delete this.dataNew[name];
+        }
+
+        if (this.data.hasOwnProperty(name)) {
+            delete this.data[name];
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Check attribute:
+```javascript
+model.has(&#x27;name&#x27;);
+```
+
+Clear attributes:
+```javascript
+model.<span class="apidocCodeKeywordSpan">clear</span>();
+```
+
+Clear one attribute:
+```javascript
+model.clear(&#x27;name&#x27;);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.create" id="apidoc.element.light-orm.Model.prototype.create">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>create
+        <span class="apidocSignatureSpan">(callback, isGetModel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (callback, isGetModel) {
+    var _this = this;
+    var that = this, query = this.sqlHelper.buildInsert(this.tableName, this.getAll());
+
+    if (&#x22;undefined&#x22; === typeof isGetModel) {
+        isGetModel = true;
+    }
+
+    Light.driver.query(query, function (err, rows, fields) {
+        if (isGetModel) {
+            var whereOptions = _this.getAll();
+            query = _this.sqlHelper.buildSelect(_this.tableName, whereOptions);
+            Light.driver.query(query, function (err, rows, fields) {
+                if (&#x22;undefined&#x22; !== typeof rows &#x26;&#x26; rows.length &#x3e; 0) {
+                    var model = new Model(_this.tableName, rows[0]);
+                    that.set(model.getAll());
+
+                    if (&#x22;function&#x22; === typeof callback) {
+                        callback(err, that);
+                    }
+                } else {
+                    if (&#x22;function&#x22; === typeof callback) {
+                        callback(err);
+                    }
+                }
+            });
+        } else {
+            if (&#x22;function&#x22; === typeof callback) {
+                callback(err);
+            }
+        }
+    });
+    //            this.callBeforeHandlers(Model.CREATE);
+    //            this.connector.query(query, (err, rows, fields) =&#x3e; {
+    //                this.callAfterHandlers(Model.CREATE);
+    //            });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+AuthorCollection.findOne(&#x22;SELECT COUNT(*) as `count` FROM `author` WHERE name = &#x27;&#x22; + author.name + &#x22;&#x27;&#
+x22;, function(err, data) {
+	var count = data.get(&#x27;count&#x27;);
+});
+```
+
+Save:
+```javascript
+model.<span class="apidocCodeKeywordSpan">create</span>(function(err, model) {});
+```
+
+Update:
+```javascript
+model.update(function(err, model) {});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.get" id="apidoc.element.light-orm.Model.prototype.get">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>get
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (name) {
+    if (this.dataNew.hasOwnProperty(name)) {
+        return this.dataNew[name];
+    }
+
+    if (this.data.hasOwnProperty(name)) {
+        return this.data[name];
+    }
+
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Get all attributes:
+```javascript
+model.getAll();
+```
+
+Get one attribute:
+```javascript
+model.<span class="apidocCodeKeywordSpan">get</span>(&#x27;name&#x27;);
+```
+
+Set attribute:
+```javascript
+model.set(&#x27;name&#x27;, &#x27;Oleksandr Knyga&#x27;);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.getAll" id="apidoc.element.light-orm.Model.prototype.getAll">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>getAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAll = function () {
+    var localData = new Clone(this.data) || {};
+
+    for (var name in this.dataNew) {
+        if (this.dataNew.hasOwnProperty(name) &#x26;&#x26; (!localData.hasOwnProperty(name) || localData[name] != this.dataNew[name])) {
+            localData[name] = this.dataNew[name];
+        }
+    }
+
+    return localData;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Find one model:
+```javascript
+AuthorCollection.findOne({
+	id: 1
+}, function(err, model) {
+	console.log(model.<span class="apidocCodeKeywordSpan">getAll</span>());
+	//{ id: 1, name: &#x27;James Bond&#x27;, description: &#x27;Agent 007&#x27; }
+});
+```
+
+Find one model by sql:
+```javascript
+AuthorCollection.findOne(&#x22;SELECT * FROM `author` WHERE id = 1&#x22;, function(err, model) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.has" id="apidoc.element.light-orm.Model.prototype.has">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>has
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (name) {
+    if (this.dataNew.hasOwnProperty(name)) {
+        return true;
+    }
+
+    if (this.data.hasOwnProperty(name)) {
+        return true;
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+model.set({
+	name: &#x27;Oleksandr Knyga&#x27;
+});
+```
+
+Check attribute:
+```javascript
+model.<span class="apidocCodeKeywordSpan">has</span>(&#x27;name&#x27;);
+```
+
+Clear attributes:
+```javascript
+model.clear();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.remove" id="apidoc.element.light-orm.Model.prototype.remove">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>remove
+        <span class="apidocSignatureSpan">(input, callback, isGetModel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (input, callback, isGetModel) {
+    var _this = this;
+    var that = this, whereOptions = {}, options;
+
+    if (&#x22;function&#x22; === typeof input) {
+        callback = input;
+    } else {
+        options = input;
+    }
+
+    if (&#x22;undefined&#x22; === typeof options) {
+        whereOptions[this.pkAttr] = this.get(this.pkAttr);
+    } else {
+        whereOptions = new Where(options).getBlock(this.getAll());
+    }
+
+    var query = this.sqlHelper.buildDelete(this.tableName, whereOptions);
+
+    if (&#x22;undefined&#x22; === typeof isGetModel) {
+        if (&#x22;boolean&#x22; === typeof callback) {
+            isGetModel = callback;
+        } else {
+            isGetModel = true;
+        }
+    }
+
+    Light.driver.query(query, function (err, rows, fields) {
+        if (isGetModel) {
+            var whereOptions = _this.getAll();
+            query = _this.sqlHelper.buildSelect(_this.tableName, whereOptions);
+            Light.driver.query(query, function (err, rows, fields) {
+                if (&#x22;undefined&#x22; !== typeof rows &#x26;&#x26; rows.length &#x3e; 0) {
+                    var model = new Model(_this.tableName, rows[0]);
+                    that.set(model.getAll());
+
+                    if (&#x22;function&#x22; === typeof callback) {
+                        callback(err, that);
+                    }
+                } else {
+                    if (&#x22;function&#x22; === typeof callback) {
+                        callback(err);
+                    }
+                }
+            });
+        } else {
+            if (&#x22;function&#x22; === typeof callback) {
+                callback(err);
+            }
+        }
+    });
+    //            this.callBeforeHandlers(Model.REMOVE);
+    //            this.connector.query(query, (err, rows, fields) =&#x3e; {
+    //                this.callAfterHandlers(Model.REMOVE);
+    //            });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+model.update({
+		pk: [&#x27;id&#x27;]
+}, function(err, model) {});
+```
+
+Delete:
+```javascript
+model.<span class="apidocCodeKeywordSpan">remove</span>(function(err, model) {});
+```
+
+Delete, with custom where block:
+```javascript
+model.remove({
+	pkValue: {
+		id: 31
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.set" id="apidoc.element.light-orm.Model.prototype.set">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>set
+        <span class="apidocSignatureSpan">(arg1, arg2, isNew)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (arg1, arg2, isNew) {
+    if (&#x22;string&#x22; === typeof arg1 &#x26;&#x26; &#x22;undefined&#x22; !== typeof arg2) {
+        if (&#x22;undefined&#x22; === typeof isNew || isNew) {
+            this.dataNew[arg1] = arg2;
+        } else {
+            this.data[arg1] = arg2;
+        }
+    }
+
+    if (&#x22;object&#x22; === typeof arg1) {
+        if (&#x22;boolean&#x22; === typeof arg2 &#x26;&#x26; arg2) {
+            for (var name in arg1) {
+                if (arg1.hasOwnProperty(name)) {
+                    this.dataNew[name] = arg1[name];
+                }
+            }
+        } else {
+            for (var name in arg1) {
+                if (arg1.hasOwnProperty(name)) {
+                    this.data[name] = arg1[name];
+                }
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Get one attribute:
+```javascript
+model.get(&#x27;name&#x27;);
+```
+
+Set attribute:
+```javascript
+model.<span class="apidocCodeKeywordSpan">set</span>(&#x27;name&#x27;, &#x27;Oleksandr Knyga&#x27;);
+```
+
+Set attributes:
+```javascript
+model.set({
+	name: &#x27;Oleksandr Knyga&#x27;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.toJSON" id="apidoc.element.light-orm.Model.prototype.toJSON">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    return this.getAll();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    /**
+    * Create array of attributes of saved models
+    * @returns {array}
+    */
+    Collection.prototype.toJSON = function () {
+        var data = [];
+        for (var i = 0, length = this.models.length; i &#x3c; length; i++) {
+            data.push(this.models[i].<span class="apidocCodeKeywordSpan">toJSON</span>());
+        }
+
+        return data;
+    };
+    return Collection;
+})();
+Light.Collection = Collection;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.toString" id="apidoc.element.light-orm.Model.prototype.toString">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return &#x22;[LightOrm Model &#x3c;&#x22; + this.tableName + &#x22;, &#x22; + (this.get(this.pkAttr) ? this.get(this.pkAttr) : &#x22;undefined&#x22;) + &#x22;&#x3e;]&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return (m[1] == &#x27;-&#x27; ? -1 : 1) * (parseInt(m[2], 10) + ((m[3] ? parseInt(m[3], 10) : 0) / 60)) * 60;
+    }
+
+    return 0;
+};
+
+SqlString.prototype.zeroPad = function (vnumber, vlength) {
+    var snumber = vnumber.<span class="apidocCodeKeywordSpan">toString</span>();
+
+    while (snumber.length &#x3c; vlength) {
+        snumber = &#x27;0&#x27; + snumber;
+    }
+
+    return snumber;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.light-orm.Model.prototype.update" id="apidoc.element.light-orm.Model.prototype.update">
+        function <span class="apidocSignatureSpan">light-orm.Model.prototype.</span>update
+        <span class="apidocSignatureSpan">(input, callback, isGetModel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (input, callback, isGetModel) {
+    var _this = this;
+    var that = this, whereOptions = {}, options;
+
+    if (&#x22;function&#x22; === typeof input) {
+        callback = input;
+    } else {
+        options = input;
+    }
+
+    if (&#x22;undefined&#x22; === typeof options) {
+        whereOptions[this.pkAttr] = this.get(this.pkAttr);
+    } else {
+        whereOptions = new Where(options).getBlock(this.getAll());
+    }
+
+    var updateData = new Clone(this.dataNew);
+
+    this.data = this.getAll();
+    this.dataNew = {};
+
+    if (new ObjectWrapper(updateData).size() &#x3c; 1) {
+        if (&#x22;function&#x22; === typeof callback) {
+            callback(&#x22;Nothing to update&#x22;);
+        }
+
+        return;
+    }
+
+    var query = this.sqlHelper.buildUpdate(this.tableName, updateData, whereOptions);
+
+    if (&#x22;undefined&#x22; === typeof isGetModel) {
+        if (&#x22;boolean&#x22; === typeof callback) {
+            isGetModel = callback;
+        } else {
+            isGetModel = true;
+        }
+    }
+
+    Light.driver.query(query, function (err, rows, fields) {
+        if (isGetModel) {
+            var whereOptions = _this.getAll();
+            query = _this.sqlHelper.buildSelect(_this.tableName, whereOptions);
+            Light.driver.query(query, function (err, rows, fields) {
+                if (&#x22;undefined&#x22; !== typeof rows &#x26;&#x26; rows.length &#x3e; 0) {
+                    var model = new Model(_this.tableName, rows[0]);
+                    that.set(model.getAll());
+
+                    if (&#x22;function&#x22; === typeof callback) {
+                        callback(err, that);
+                    }
+                } else {
+                    if (&#x22;function&#x22; === typeof callback) {
+                        callback(err);
+                    }
+                }
+            });
+        } else {
+            if (&#x22;function&#x22; === typeof callback) {
+                callback(err);
+            }
+        }
+    });
+    //            this.callBeforeHandlers(Model.UPDATE);
+    //            this.connector.query(query, (err, rows, fields) =&#x3e; {
+    //                this.callAfterHandlers(Model.UPDATE);
+    //            });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Save:
+```javascript
+model.create(function(err, model) {});
+```
+
+Update:
+```javascript
+model.<span class="apidocCodeKeywordSpan">update</span>(function(err, model) {});
+```
+
+Update, with custom where block:
+```javascript
+model.update({
+	pkValue: {
+		id: 31
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
